@@ -134,7 +134,13 @@ a:hover{text-decoration:underline}
   display:grid;place-items:center;font-family:Montserrat,Arial,sans-serif;
   font-size:13px;font-weight:600;color:#64B5F6;letter-spacing:.02em
 }
-.svc h3{font-family:Montserrat,Arial,sans-serif;font-size:17px;font-weight:600;color:var(--blue-btn);margin-bottom:14px;line-height:1.3;min-height:2.6em}
+.svc h3{font-family:Montserrat,Arial,sans-serif;font-size:16px;font-weight:600;color:var(--blue-btn);margin-bottom:14px;line-height:1.3;min-height:3.2em}
+@media (min-width:901px){
+  .svc-grid{grid-template-columns:repeat(6,1fr)}
+  .svc{grid-column:span 2}
+  .svc:nth-child(4){grid-column:2 / span 2}
+  .svc:nth-child(5){grid-column:4 / span 2}
+}
 .svc .btn-order{
   display:inline-block;padding:10px 22px;border:1.5px solid var(--blue-btn);
   border-radius:6px;background:#fff;color:var(--blue-btn);font-family:Montserrat,Arial,sans-serif;
@@ -483,18 +489,28 @@ a:hover{text-decoration:underline}
     <div class="svc-grid">
       <article class="svc">
         <div class="svc-ph" aria-hidden="true">фото</div>
-        <h3>Нейродиагностика<br>и мониторинг</h3>
-        <a class="btn-order" href="usluga.html#napr-diagnostika">Заказать услугу</a>
+        <h3>Нейроэргономика<br>и мониторинг операторов</h3>
+        <a class="btn-order" href="usluga.html#napr-ergo">Заказать услугу</a>
       </article>
       <article class="svc">
         <div class="svc-ph" aria-hidden="true">фото</div>
-        <h3>Реабилитация<br>и нейротехнологии</h3>
-        <a class="btn-order" href="usluga.html#napr-reabilitaciya">Заказать услугу</a>
+        <h3>Нейроюзабилити<br>и аудит интерфейсов</h3>
+        <a class="btn-order" href="usluga.html#napr-ux">Заказать услугу</a>
       </article>
       <article class="svc">
         <div class="svc-ph" aria-hidden="true">фото</div>
-        <h3>Нейромаркетинг<br>и поведение</h3>
-        <a class="btn-order" href="usluga.html#napr-marketing">Заказать услугу</a>
+        <h3>Нейромаркетинг<br>и сенсорный аудит</h3>
+        <a class="btn-order" href="usluga.html#napr-neuromarketing">Заказать услугу</a>
+      </article>
+      <article class="svc">
+        <div class="svc-ph" aria-hidden="true">фото</div>
+        <h3>R&amp;D-консалтинг<br>и валидация BCI</h3>
+        <a class="btn-order" href="usluga.html#napr-bci">Заказать услугу</a>
+      </article>
+      <article class="svc">
+        <div class="svc-ph" aria-hidden="true">фото</div>
+        <h3>Нейрореабилитация<br>и когнитивный тренинг</h3>
+        <a class="btn-order" href="usluga.html#napr-rehab">Заказать услугу</a>
       </article>
     </div>
   </div>
