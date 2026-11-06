@@ -128,6 +128,22 @@ a:hover{text-decoration:underline}
 /* Направления — тот же формат карточек, что у блока задач */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
 
+/* Формат работы — горизонтальные шаги, не task-cards */
+.format-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px;
+  max-width:1000px;margin:0 auto
+}
+.format-step{position:relative;padding-top:18px;border-top:3px solid var(--blue-btn)}
+.format-step .n{
+  font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:700;
+  color:var(--blue-btn);letter-spacing:.08em;margin-bottom:10px;line-height:1
+}
+.format-step h3{
+  font-family:Montserrat,Arial,sans-serif;font-size:16px;font-weight:600;
+  line-height:1.35;color:var(--text);margin-bottom:8px
+}
+.format-step p{font-size:14px;color:var(--muted);line-height:1.45}
+
 /* Проекты */
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1000px;margin:0 auto}
 .proj-card{
@@ -273,7 +289,8 @@ a:hover{text-decoration:underline}
   .hero h1{font-size:28px}
   .hero .lead{font-size:16px}
   .hero-in{max-width:100%;padding:40px 0}
-  .icon-grid,.task-grid,.svc-grid,.proj-grid,.spec-grid,.ft-offices{grid-template-columns:1fr}
+  .icon-grid,.task-grid,.svc-grid,.format-steps,.proj-grid,.spec-grid,.ft-offices{grid-template-columns:1fr}
+  .format-steps{gap:20px}
   .ft-top{flex-direction:column;align-items:flex-start}
   .contacts .phone{font-size:22px}
   .proj-card{grid-template-columns:100px 1fr}
@@ -311,6 +328,9 @@ a:hover{text-decoration:underline}
   .task-card h3{font-size:14px}
   .task-card p{font-size:12px}
   .svc-grid{gap:12px}
+  .format-steps{gap:14px 16px}
+  .format-step h3{font-size:14px}
+  .format-step p{font-size:12px}
   .proj-grid{gap:12px}
   .proj-card{padding:12px;gap:12px}
   .proj-ph{font-size:11px}
@@ -499,8 +519,38 @@ a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- 5. Наши проекты -->
-<section class="sec" id="proekty">
+<!-- 5. Формат работы -->
+<section class="sec" id="format">
+  <div class="wrap">
+    <h2>Формат работы</h2>
+    <p class="sub">От постановки задачи до отчёта — в одной цепочке с заказчиком</p>
+    <div class="format-steps">
+      <div class="format-step">
+        <div class="n">01</div>
+        <h3>ТЗ и дизайн исследования</h3>
+        <p>Совместно уточняем цели, сценарии и метрики — фиксируем протокол под вашу задачу</p>
+      </div>
+      <div class="format-step">
+        <div class="n">02</div>
+        <h3>Подбор респондентов</h3>
+        <p>Подбираем участников под профиль заказчика и требования исследования</p>
+      </div>
+      <div class="format-step">
+        <div class="n">03</div>
+        <h3>Измерения в лаборатории</h3>
+        <p>Проводим сессии по согласованному протоколу на оборудовании института</p>
+      </div>
+      <div class="format-step">
+        <div class="n">04</div>
+        <h3>Обработка и отчёт</h3>
+        <p>Обрабатываем данные и передаём отчёт с выводами и рекомендациями для продукта</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Наши проекты -->
+<section class="sec band-gray" id="proekty">
   <div class="wrap">
     <h2>Наши проекты</h2>
     <p class="sub">Заготовки карточек — тексты и фото уточняются</p>
@@ -533,7 +583,7 @@ a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- 6. Наша команда -->
+<!-- 7. Наша команда -->
 <section class="specs" id="komanda">
   <div class="wrap">
     <h2>Наша команда</h2>
@@ -573,7 +623,7 @@ a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- 7. Контакты — компоновка как у ЦДМ -->
+<!-- 8. Контакты — компоновка как у ЦДМ -->
 <section class="contacts" id="kontakty">
   <div class="wrap">
     <h2>Контакты</h2>
