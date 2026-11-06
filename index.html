@@ -125,28 +125,27 @@ a:hover{text-decoration:underline}
 .task-card p{font-size:14px;color:var(--muted);line-height:1.45;flex:1}
 .task-card .more{font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;color:var(--blue-btn);margin-top:6px}
 
-/* Направления */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+/* Направления — 5 в ряд, фото 3:4 */
+.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}
 .svc{text-align:center}
 .svc-ph{
-  width:100%;aspect-ratio:16/10;border-radius:12px;margin-bottom:16px;
+  width:100%;aspect-ratio:3/4;border-radius:12px;margin-bottom:12px;
   background:#EEF5FB;border:1.5px dashed #90CAF9;
   display:grid;place-items:center;font-family:Montserrat,Arial,sans-serif;
-  font-size:13px;font-weight:600;color:#64B5F6;letter-spacing:.02em
+  font-size:12px;font-weight:600;color:#64B5F6;letter-spacing:.02em
 }
-.svc h3{font-family:Montserrat,Arial,sans-serif;font-size:16px;font-weight:600;color:var(--blue-btn);margin-bottom:14px;line-height:1.3;min-height:3.2em}
-@media (min-width:901px){
-  .svc-grid{grid-template-columns:repeat(6,1fr)}
-  .svc{grid-column:span 2}
-  .svc:nth-child(4){grid-column:2 / span 2}
-  .svc:nth-child(5){grid-column:4 / span 2}
-}
+.svc h3{font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:600;color:var(--blue-btn);margin-bottom:12px;line-height:1.3;min-height:3.9em}
 .svc .btn-order{
-  display:inline-block;padding:10px 22px;border:1.5px solid var(--blue-btn);
+  display:inline-block;padding:8px 14px;border:1.5px solid var(--blue-btn);
   border-radius:6px;background:#fff;color:var(--blue-btn);font-family:Montserrat,Arial,sans-serif;
-  font-weight:600;font-size:14px;text-decoration:none!important
+  font-weight:600;font-size:12px;text-decoration:none!important
 }
 .svc .btn-order:hover{background:#E8F4FB}
+@media (max-width:1100px) and (min-width:901px){
+  .svc-grid{gap:12px}
+  .svc h3{font-size:13px}
+  .svc .btn-order{padding:8px 10px;font-size:11px}
+}
 
 /* Проекты */
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1000px;margin:0 auto}
@@ -331,8 +330,10 @@ a:hover{text-decoration:underline}
   .task-card{padding:14px}
   .task-card h3{font-size:14px}
   .task-card p{font-size:12px}
-  .svc-ph{aspect-ratio:16/9;margin-bottom:10px}
-  .svc h3{font-size:15px;min-height:0;margin-bottom:10px}
+  .svc-grid{grid-template-columns:repeat(5,1fr);gap:10px}
+  .svc-ph{aspect-ratio:3/4;margin-bottom:8px}
+  .svc h3{font-size:11px;min-height:0;margin-bottom:8px}
+  .svc .btn-order{padding:6px 8px;font-size:10px}
   .proj-grid{gap:12px}
   .proj-card{padding:12px;gap:12px}
   .proj-ph{font-size:11px}
