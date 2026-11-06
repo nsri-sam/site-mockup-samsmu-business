@@ -19,7 +19,6 @@ body{font-family:"Open Sans",Arial,sans-serif;color:var(--text);background:#fff;
 a{color:var(--blue-btn);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-.ph{outline:1.5px dashed #90CAF9;outline-offset:3px}
 
 .mockbar{
   position:sticky;top:0;z-index:50;background:#111;color:#fff;
@@ -43,7 +42,7 @@ a:hover{text-decoration:underline}
   font-family:Montserrat,Arial,sans-serif;font-size:32px;font-weight:700;
   line-height:1.2;margin-bottom:12px;letter-spacing:-.01em
 }
-.page-head .lead{font-size:17px;color:var(--muted);max-width:40em}
+.page-head .lead{font-size:17px;color:var(--muted);max-width:42em}
 
 .toc{
   display:flex;flex-wrap:wrap;gap:8px 16px;padding:16px 0 8px;
@@ -58,9 +57,10 @@ a:hover{text-decoration:underline}
   color:var(--blue-btn);letter-spacing:.06em;margin-bottom:8px
 }
 .block h2{font-family:Montserrat,Arial,sans-serif;font-size:24px;font-weight:700;margin-bottom:14px;line-height:1.25}
-.block p{margin-bottom:12px;font-size:16px}
-.block ul{margin:12px 0 16px 1.2em}
-.block li{margin-bottom:6px}
+.block .desc-ph{
+  margin:0 0 8px;padding:14px 16px;border:1.5px dashed #90CAF9;border-radius:8px;
+  background:#F7FBFE;color:var(--blue-mid);font-size:14px;line-height:1.45
+}
 .block .meta{
   display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px
 }
@@ -68,14 +68,7 @@ a:hover{text-decoration:underline}
   background:var(--band);border-radius:8px;padding:14px 16px;font-size:14px
 }
 .block .meta b{display:block;font-family:Montserrat,Arial,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
-
-.napr{background:var(--band);padding:40px 0;margin-top:24px}
-.napr h2{font-family:Montserrat,Arial,sans-serif;font-size:26px;text-align:center;margin-bottom:28px}
-.napr-grid{display:grid;gap:20px}
-.napr-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;scroll-margin-top:56px}
-.napr-card h3{font-family:Montserrat,Arial,sans-serif;font-size:20px;font-weight:700;color:var(--blue-mid);margin-bottom:10px}
-.napr-card p{font-size:15px;margin-bottom:10px}
-.napr-card ul{margin-left:1.1em;font-size:15px}
+.block .meta .ph-val{color:var(--blue-mid);font-style:italic}
 
 .cta-bar{
   display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
@@ -110,7 +103,7 @@ a:hover{text-decoration:underline}
 
 <div class="mockbar">
   МАКЕТ · страница услуг НИИ нейронаук
-  <span> · переход с «Заказать услугу» и из блока задач</span>
+  <span> · список услуг и пакеты по направлениям</span>
 </div>
 
 <div class="top">
@@ -123,179 +116,82 @@ a:hover{text-decoration:underline}
 <div class="wrap">
   <header class="page-head">
     <div class="eyebrow">Услуги института</div>
-    <h1>Подробное описание работ</h1>
-    <p class="lead">Ниже — состав услуг по типовым задачам заказчика и по направлениям деятельности. Формулировки — рабочие заготовки макета.</p>
+    <h1>Подробное описание услуг</h1>
+    <p class="lead">Примерные пакеты по направлениям деятельности. Описание, формат, результат и ценовой диапазон — заготовки макета, уточняются при запросе.</p>
   </header>
 
   <nav class="toc" aria-label="Содержание">
-    <a href="#task-01">01 BCI-гипотеза</a>
-    <a href="#task-02">02 Нейроюзабилити</a>
-    <a href="#task-03">03 Нагрузка</a>
-    <a href="#task-04">04 Когн. тренинг</a>
-    <a href="#task-05">05 Медиа / полка</a>
-    <a href="#task-06">06 Клиентский путь</a>
-    <a href="#napravleniya">Направления</a>
+    <a href="#napr-ergo">01 Нейроэргономика</a>
+    <a href="#napr-ux">02 Нейроюзабилити</a>
+    <a href="#napr-neuromarketing">03 Нейромаркетинг</a>
+    <a href="#napr-bci">04 R&amp;D / BCI</a>
+    <a href="#napr-rehab">05 Когн. тренинг</a>
   </nav>
 
-  <article class="block" id="task-01">
-    <div class="num">Задача 01</div>
-    <h2>Проверить нейро/BCI-гипотезу до дорогой разработки</h2>
-    <p>Протокол, конечные точки и пилот апробации (P300, SSVEP, моторное воображение и др.) до вложений в продукт. Научно-методическое сопровождение разработчиков нейроинтерфейсов и ПО.</p>
-    <ul>
-      <li>Дизайн протокола и критерии успеха</li>
-      <li>Пилотная апробация на оборудовании лаборатории</li>
-      <li>Отчёт о точности, задержках и пригодности протокола</li>
-    </ul>
+  <article class="block" id="napr-ergo">
+    <span id="task-01"></span>
+    <div class="num">Пакет 01 · направление</div>
+    <h2>Нейроэргономика и мониторинг операторов</h2>
+    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
     <div class="meta">
-      <div><b>Формат</b>R&amp;D-пилот</div>
-      <div><b>Результат</b>Протокол + отчёт апробации</div>
-      <div><b>Направление</b>R&amp;D-консалтинг и валидация BCI</div>
+      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
     </div>
   </article>
 
-  <article class="block" id="task-02">
-    <div class="num">Задача 02</div>
-    <h2>Провести нейроюзабилити цифрового продукта</h2>
-    <p>Траектории внимания, зоны слепоты, моменты замешательства и фрустрации в контрольных сценариях — для сайтов, приложений и кабин управления.</p>
-    <ul>
-      <li>Айтрекинг: TFF, тепловые карты, зоны слепоты</li>
-      <li>Мультимодальный UX: ЭЭГ + айтрекинг + facial coding</li>
-      <li>Прикладные рекомендации по переработке интерфейса</li>
-    </ul>
+  <article class="block" id="napr-ux">
+    <div class="num">Пакет 02 · направление</div>
+    <h2>Нейроюзабилити и аудит интерфейсов</h2>
+    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
     <div class="meta">
-      <div><b>Формат</b>UX-аудит с биометрией</div>
-      <div><b>Результат</b>Тепловые карты + журнал сбоев + рекомендации</div>
-      <div><b>Направление</b>Нейроюзабилити и аудит интерфейсов</div>
+      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
     </div>
   </article>
 
-  <article class="block" id="task-03">
-    <div class="num">Задача 03</div>
-    <h2>Оценить нагрузку и внимание в сценарии продукта</h2>
-    <p>Динамика когнитивной нагрузки, утомления и потери бдительности в рабочих и продуктовых сценариях — без «нейроанализа сотрудников» как кадровой диагностики.</p>
-    <ul>
-      <li>ЭЭГ-маркеры нагрузки и вариабельность сердечного ритма</li>
-      <li>Детекция снижения концентрации (окулография, КГР/EDA)</li>
-      <li>Карта допустимой нагрузки и рекомендации по сценарию</li>
-    </ul>
+  <article class="block" id="napr-neuromarketing">
+    <div class="num">Пакет 03 · направление</div>
+    <h2>Нейромаркетинг и сенсорный аудит</h2>
+    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
     <div class="meta">
-      <div><b>Формат</b>Сценарный пилот</div>
-      <div><b>Результат</b>Карта нагрузки + критерии рисков</div>
-      <div><b>Направление</b>Нейроэргономика и мониторинг операторов</div>
+      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
     </div>
   </article>
 
-  <article class="block" id="task-04">
-    <div class="num">Задача 04</div>
-    <h2>Валидировать методику когнитивного тренинга для корпоративного обучения</h2>
-    <p>Измеримый когнитивный трансфер навыков (память, внимание, реакция) и акт валидации методики — без клинических обещаний лечения.</p>
-    <ul>
-      <li>Дизайн оценки трансфера навыков</li>
-      <li>Исключение эффекта привыкания к тестам</li>
-      <li>Акт / отчёт валидации программы тренировок</li>
-    </ul>
+  <article class="block" id="napr-bci">
+    <div class="num">Пакет 04 · направление</div>
+    <h2>R&amp;D-консалтинг и валидация BCI</h2>
+    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
     <div class="meta">
-      <div><b>Формат</b>Валидационный пилот</div>
-      <div><b>Результат</b>Акт валидации + отчёт</div>
-      <div><b>Направление</b>Нейрореабилитация и когнитивный тренинг</div>
+      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
     </div>
   </article>
 
-  <article class="block" id="task-05">
-    <div class="num">Задача 05</div>
-    <h2>Оценить реакцию на медиаконтент, упаковку или полку</h2>
-    <p>Внимание, эмоциональная валентность и запоминаемость — до выхода на рынок. Посекундная оценка ролика и заметность элементов дизайна.</p>
-    <ul>
-      <li>Кривые удержания внимания и эмоциональный отклик</li>
-      <li>Скорость идентификации бренда и считываемость сообщений</li>
-      <li>Оптимизация хронометража и тепловые карты полки</li>
-    </ul>
+  <article class="block" id="napr-rehab">
+    <div class="num">Пакет 05 · направление</div>
+    <h2>Нейрореабилитация и когнитивный тренинг</h2>
+    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
     <div class="meta">
-      <div><b>Формат</b>Сенсорный / нейромаркетинговый аудит</div>
-      <div><b>Результат</b>Отчёт с покадровой оптимизацией</div>
-      <div><b>Направление</b>Нейромаркетинг и сенсорный аудит</div>
+      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
+      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
     </div>
   </article>
 
-  <article class="block" id="task-06">
-    <div class="num">Задача 06</div>
-    <h2>Исследовать клиентский путь и точки потери внимания</h2>
-    <p>Покадровый / поэтапный разбор воронки: где падает внимание и срывается действие на сайте или в сервисе — по объективным данным, не только опросам.</p>
-    <ul>
-      <li>Сценарий пути и контрольные точки воронки</li>
-      <li>Мультимодальная запись реакций на этапах</li>
-      <li>Карта точек потери внимания и рекомендации</li>
-    </ul>
-    <div class="meta">
-      <div><b>Формат</b>Исследование CJM</div>
-      <div><b>Результат</b>Карта пути + рекомендации</div>
-      <div><b>Направление</b>Нейромаркетинг · нейроюзабилити</div>
-    </div>
-  </article>
-</div>
-
-<section class="napr" id="napravleniya">
-  <div class="wrap">
-    <h2>Направления деятельности</h2>
-    <div class="napr-grid">
-      <article class="napr-card" id="napr-ergo">
-        <h3>Нейроэргономика и мониторинг операторов</h3>
-        <p>Снижение аварийности и оптимизация рабочих мест высокой ответственности: оценка когнитивной нагрузки, утомления, потери бдительности и микросна.</p>
-        <ul>
-          <li>ЭЭГ-маркеры нагрузки и вариабельность сердечного ритма</li>
-          <li>Видеоокулография и КГР/EDA для детекции снижения концентрации</li>
-          <li>Карта предельно допустимой нагрузки и критерии для систем предупреждения рисков</li>
-        </ul>
-      </article>
-      <article class="napr-card" id="napr-ux">
-        <h3>Нейроюзабилити и аудит интерфейсов</h3>
-        <p>Анализ цифрового пользовательского опыта на основе бессознательных реакций: сайты, приложения, кабины управления.</p>
-        <ul>
-          <li>Айтрекинг: траектории внимания, TFF, зоны слепоты</li>
-          <li>Мультимодальный UX: ЭЭГ + айтрекинг + facial coding</li>
-          <li>Тепловые карты и прикладные рекомендации по переработке интерфейсов</li>
-        </ul>
-      </article>
-      <article class="napr-card" id="napr-neuromarketing">
-        <h3>Нейромаркетинг и сенсорный аудит</h3>
-        <p>Прогнозирование эффективности контента и упаковки до выхода на рынок: внимание, эмоции, запоминаемость, заметность на полке.</p>
-        <ul>
-          <li>Посекундная оценка медиаконтента и роликов</li>
-          <li>Скорость идентификации бренда и считываемость сообщений</li>
-          <li>Оптимизация хронометража и тепловые карты полочного пространства</li>
-        </ul>
-      </article>
-      <article class="napr-card" id="napr-bci">
-        <h3>R&amp;D-консалтинг и валидация BCI</h3>
-        <p>Научно-методическое сопровождение разработчиков нейроинтерфейсов и ПО: протоколы ИМК, БОС, биометрические датасеты.</p>
-        <ul>
-          <li>Апробация интерфейсов «мозг–компьютер» (P300, SSVEP, моторное воображение)</li>
-          <li>Алгоритмы и протоколы биологической обратной связи</li>
-          <li>Сбор и разметка датасетов ЭЭГ, ЭКГ, КГР, ЭМГ</li>
-        </ul>
-      </article>
-      <article class="napr-card" id="napr-rehab">
-        <h3>Нейрореабилитация и когнитивный тренинг</h3>
-        <p>Оценка эффективности восстановительных и обучающих методик: когнитивный трансфер навыков и протоколы неинвазивной стимуляции.</p>
-        <ul>
-          <li>Валидация тренажёров и методик без эффекта привыкания к тестам</li>
-          <li>Экспериментальный подбор параметров ТМС / tDCS в исследовательском контуре</li>
-          <li>Верифицированные протоколы и акты валидации программ тренировок</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<div class="wrap">
   <div class="cta-bar">
     <div>
       <strong>Готовы обсудить задачу?</strong>
-      <div style="font-size:14px;color:var(--muted);margin-top:4px">Напишите на <a href="mailto:neuro@samsmu.ru">neuro@samsmu.ru</a> или оставьте заявку на главной странице</div>
+      <div style="font-size:14px;color:var(--muted);margin-top:4px">Напишите на <a href="mailto:neuro@samsmu.ru">neuro@samsmu.ru</a> или оформите заявку на главной странице</div>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
       <a class="btn-sec" href="index.html#zadachi">К списку задач</a>
-      <a class="btn" href="index.html" onclick="sessionStorage.setItem('openZayavka','1')">Оставить заявку</a>
+      <a class="btn" href="index.html" onclick="sessionStorage.setItem('openZayavka','1')">Заказать услугу</a>
     </div>
   </div>
 </div>
