@@ -85,10 +85,11 @@ a:hover{text-decoration:underline}
 }
 .hero .btn-ghost:hover{background:rgba(255,255,255,.12)}
 .hero .link-req{
-  color:#fff;font-weight:600;font-size:16px;text-decoration:none;
-  background:none;border:0;cursor:pointer;font-family:inherit;padding:0
+  position:relative;z-index:2;color:#fff!important;font-weight:600;font-size:16px;
+  text-decoration:none!important;background:none;border:0;cursor:pointer;
+  font-family:Montserrat,Arial,sans-serif;padding:0;pointer-events:auto
 }
-.hero .link-req:hover{text-decoration:underline}
+.hero .link-req:hover{text-decoration:underline!important}
 
 .sec{padding:64px 0}
 .sec h2{
@@ -395,7 +396,7 @@ a:hover{text-decoration:underline}
       <p class="lead">Научно-исследовательский институт нейронаук СамГМУ исследует когнитивные, эмоциональные и физиологические реакции человека на продукт, используя ЭЭГ, айтрекинг, КГР и нейростимуляцию.</p>
       <div class="hero-cta">
         <button type="button" class="btn-ghost" data-open-modal>Заказать услугу</button>
-        <a class="link-req" href="usluga.html#task-01">Список услуг &gt;</a>
+        <a class="link-req" href="./usluga.html#task-01">Список услуг &gt;</a>
       </div>
     </div>
   </div>
