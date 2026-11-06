@@ -125,54 +125,8 @@ a:hover{text-decoration:underline}
 .task-card p{font-size:14px;color:var(--muted);line-height:1.45;flex:1}
 .task-card .more{font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;color:var(--blue-btn);margin-top:6px}
 
-/* Направления — карточки как в макете (фото + заголовок + описание + Подробнее), 5 в ряд */
-.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:stretch}
-.svc{
-  display:flex;flex-direction:column;text-align:left;
-  background:#fff;border:1.5px solid var(--blue-btn);border-radius:10px;overflow:hidden
-}
-.svc-media{
-  position:relative;aspect-ratio:4/3;flex:none;
-  display:flex;align-items:center;justify-content:center;padding:10px 10px 28px;box-sizing:border-box;
-  background-color:#E8EEF2;
-  background-image:
-    linear-gradient(to top left,transparent 49.4%,var(--blue-mid) 49.4%,var(--blue-mid) 50.6%,transparent 50.6%),
-    linear-gradient(to top right,transparent 49.4%,var(--blue-mid) 49.4%,var(--blue-mid) 50.6%,transparent 50.6%)
-}
-.svc-media .ph-hint{
-  position:relative;z-index:1;margin:0;text-align:center;
-  font-family:Montserrat,Arial,sans-serif;font-size:10px;font-weight:600;line-height:1.35;
-  color:var(--blue-mid)
-}
-.svc-media .ph-bar{
-  position:absolute;left:0;right:0;bottom:0;z-index:2;
-  background:var(--blue-btn);color:#fff;text-align:center;
-  font-family:Montserrat,Arial,sans-serif;font-size:9px;font-weight:600;line-height:1.3;
-  padding:6px 6px
-}
-.svc-body{display:flex;flex-direction:column;gap:10px;padding:12px 12px 14px;flex:1}
-.svc h3{
-  font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:700;
-  color:var(--text);margin:0;line-height:1.3;min-height:0
-}
-.svc .svc-desc{
-  margin:0;padding:8px;border:1px dashed #B0BEC5;border-radius:4px;background:#F7F9FA;
-  font-size:11px;line-height:1.4;color:var(--muted);flex:1
-}
-.svc .btn-more{
-  align-self:flex-start;display:inline-block;padding:7px 14px;border:1.5px solid var(--blue-btn);
-  border-radius:6px;background:#fff;color:var(--blue-btn);font-family:Montserrat,Arial,sans-serif;
-  font-weight:600;font-size:12px;text-decoration:none!important;margin-top:auto
-}
-.svc .btn-more:hover{background:#E8F4FB}
-@media (max-width:1100px) and (min-width:901px){
-  .svc-grid{gap:10px}
-  .svc h3{font-size:13px}
-  .svc .svc-desc{font-size:10px}
-  .svc .btn-more{padding:6px 10px;font-size:11px}
-  .svc-media .ph-hint{font-size:9px}
-  .svc-media .ph-bar{font-size:8px;padding:5px 4px}
-}
+/* Направления — тот же формат карточек, что у блока задач */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
 
 /* Проекты */
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1000px;margin:0 auto}
@@ -323,11 +277,6 @@ a:hover{text-decoration:underline}
   .ft-top{flex-direction:column;align-items:flex-start}
   .contacts .phone{font-size:22px}
   .proj-card{grid-template-columns:100px 1fr}
-  .svc-media .ph-hint{font-size:13px}
-  .svc-media .ph-bar{font-size:11px;padding:8px}
-  .svc h3{font-size:18px}
-  .svc .svc-desc{font-size:14px}
-  .svc .btn-more{font-size:14px;padding:10px 18px}
 }
 
 /* —— PDF: альбом A4, один блок = один лист —— */
@@ -361,14 +310,7 @@ a:hover{text-decoration:underline}
   .task-card{padding:14px}
   .task-card h3{font-size:14px}
   .task-card p{font-size:12px}
-  .svc-grid{grid-template-columns:repeat(5,1fr);gap:8px}
-  .svc-media{aspect-ratio:4/3;padding:6px 6px 22px}
-  .svc-media .ph-hint{font-size:8px}
-  .svc-media .ph-bar{font-size:7px;padding:4px 3px}
-  .svc-body{padding:8px;gap:6px}
-  .svc h3{font-size:10px}
-  .svc .svc-desc{font-size:8px;padding:5px}
-  .svc .btn-more{padding:5px 8px;font-size:9px}
+  .svc-grid{gap:12px}
   .proj-grid{gap:12px}
   .proj-card{padding:12px;gap:12px}
   .proj-ph{font-size:11px}
@@ -523,61 +465,36 @@ a:hover{text-decoration:underline}
   <div class="wrap">
     <h2>Направления деятельности</h2>
     <div class="svc-grid">
-      <article class="svc">
-        <div class="svc-media" aria-hidden="true">
-          <p class="ph-hint">Фото: мониторинг оператора — ЭЭГ / окулография за работой, реальная съёмка, 4:3</p>
-          <div class="ph-bar">Фото: реальная лабораторная съёмка, без фильтров</div>
-        </div>
-        <div class="svc-body">
-          <h3>Нейроэргономика и мониторинг операторов</h3>
-          <p class="svc-desc">Снижение аварийности и оптимизация рабочих мест высокой ответственности: нагрузка, утомление, потеря бдительности</p>
-          <a class="btn-more" href="usluga.html#napr-ergo">Подробнее</a>
-        </div>
-      </article>
-      <article class="svc">
-        <div class="svc-media" aria-hidden="true">
-          <p class="ph-hint">Фото: айтрекинг интерфейса в лаборатории НИИ — оборудование и исследователь, реальная съёмка, 4:3</p>
-          <div class="ph-bar">Фото: реальная лабораторная съёмка, без фильтров</div>
-        </div>
-        <div class="svc-body">
-          <h3>Нейроюзабилити и аудит интерфейсов</h3>
-          <p class="svc-desc">Анализ цифрового пользовательского опыта на основе бессознательных реакций: сайты, приложения, кабины</p>
-          <a class="btn-more" href="usluga.html#napr-ux">Подробнее</a>
-        </div>
-      </article>
-      <article class="svc">
-        <div class="svc-media" aria-hidden="true">
-          <p class="ph-hint">Фото: сенсорный аудит упаковки / полки — стимульный материал и регистрация реакций, 4:3</p>
-          <div class="ph-bar">Фото: реальная лабораторная съёмка, без фильтров</div>
-        </div>
-        <div class="svc-body">
-          <h3>Нейромаркетинг и сенсорный аудит</h3>
-          <p class="svc-desc">Прогнозирование эффективности контента и упаковки до выхода на рынок: внимание, эмоции, запоминаемость</p>
-          <a class="btn-more" href="usluga.html#napr-neuromarketing">Подробнее</a>
-        </div>
-      </article>
-      <article class="svc">
-        <div class="svc-media" aria-hidden="true">
-          <p class="ph-hint">Фото: апробация BCI / нейроинтерфейса в лаборатории — оборудование и исследователь, 4:3</p>
-          <div class="ph-bar">Фото: реальная лабораторная съёмка, без фильтров</div>
-        </div>
-        <div class="svc-body">
-          <h3>R&amp;D-консалтинг и валидация BCI</h3>
-          <p class="svc-desc">Научно-методическое сопровождение разработчиков нейроинтерфейсов и ПО: протоколы, метрики, датасеты</p>
-          <a class="btn-more" href="usluga.html#napr-bci">Подробнее</a>
-        </div>
-      </article>
-      <article class="svc">
-        <div class="svc-media" aria-hidden="true">
-          <p class="ph-hint">Фото: когнитивный тренинг / оценка методики — сессия с регистрацией показателей, 4:3</p>
-          <div class="ph-bar">Фото: реальная лабораторная съёмка, без фильтров</div>
-        </div>
-        <div class="svc-body">
-          <h3>Нейрореабилитация и когнитивный тренинг</h3>
-          <p class="svc-desc">Оценка эффективности восстановительных и обучающих методик: трансфер навыков и валидация программ</p>
-          <a class="btn-more" href="usluga.html#napr-rehab">Подробнее</a>
-        </div>
-      </article>
+      <a class="task-card" href="usluga.html#napr-ergo">
+        <div class="num">01</div>
+        <h3>Нейроэргономика и мониторинг операторов</h3>
+        <p>Снижение аварийности и оптимизация рабочих мест высокой ответственности: нагрузка, утомление, потеря бдительности</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#napr-ux">
+        <div class="num">02</div>
+        <h3>Нейроюзабилити и аудит интерфейсов</h3>
+        <p>Анализ цифрового пользовательского опыта на основе бессознательных реакций: сайты, приложения, кабины</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#napr-neuromarketing">
+        <div class="num">03</div>
+        <h3>Нейромаркетинг и сенсорный аудит</h3>
+        <p>Прогнозирование эффективности контента и упаковки до выхода на рынок: внимание, эмоции, запоминаемость</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#napr-bci">
+        <div class="num">04</div>
+        <h3>R&amp;D-консалтинг и валидация BCI</h3>
+        <p>Научно-методическое сопровождение разработчиков нейроинтерфейсов и ПО: протоколы, метрики, датасеты</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#napr-rehab">
+        <div class="num">05</div>
+        <h3>Нейрореабилитация и когнитивный тренинг</h3>
+        <p>Оценка эффективности восстановительных и обучающих методик: трансфер навыков и валидация программ</p>
+        <span class="more">Подробнее →</span>
+      </a>
     </div>
   </div>
 </section>
