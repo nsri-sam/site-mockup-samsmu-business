@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>НИИ нейронаук — макет в стиле ЦДМ (раздел Бизнесу, samsmu.ru)</title>
+<style>
+@font-face{font-family:Montserrat;src:url("fonts/Montserrat-Regular.ttf") format("truetype");font-weight:400}
+@font-face{font-family:Montserrat;src:url("fonts/Montserrat-Medium.ttf") format("truetype");font-weight:500}
+@font-face{font-family:Montserrat;src:url("fonts/Montserrat-SemiBold.ttf") format("truetype");font-weight:600}
+@font-face{font-family:Montserrat;src:url("fonts/Montserrat-Bold.ttf") format("truetype");font-weight:700}
+@font-face{font-family:Open Sans;src:url("fonts/OpenSans-Regular.ttf") format("truetype");font-weight:400}
+@font-face{font-family:Open Sans;src:url("fonts/OpenSans-SemiBold.ttf") format("truetype");font-weight:600}
+
+:root{
+  /* Палитра samsmu.ru (футер со скрина ≈ #006BB3; токены НИИ — #006CB4 / #3091D1) */
+  --blue:#006CB4;
+  --blue-btn:#006CB4;
+  --blue-deep:#004E82;
+  --blue-mid:#3091D1;
+  --blue-spec:#006CB4;
+  --ft-bg:#006BB3;
+  --text:#222;
+  --muted:#666;
+  --line:#E0E0E0;
+  --band:#F5F5F5;
+  --wrap:1100px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.55;font-size:16px}
+img{max-width:100%;display:block}
+a{color:var(--blue-btn);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.ph{outline:1.5px dashed #90CAF9;outline-offset:3px}
+
+.mockbar{
+  position:sticky;top:0;z-index:50;background:#111;color:#fff;
+  font-family:Montserrat,Arial,sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.03em;padding:10px 16px;text-align:center
+}
+.mockbar span{opacity:.7;font-weight:400}
+
+.toputil{border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}
+.toputil .wrap{display:flex;justify-content:flex-end;gap:16px;min-height:34px;align-items:center}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none}
+.logo img{height:48px}
+.logo b{font-family:Montserrat,Arial,sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;line-height:1.25;max-width:12em}
+.nav-main{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:500}
+.nav-main a{color:var(--text);text-decoration:none}
+.btn-eios{background:var(--blue-btn);color:#fff!important;padding:8px 12px;border-radius:4px;font-weight:600;text-decoration:none!important}
+.audience{display:flex;flex-wrap:wrap;gap:20px;padding:10px 0 12px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;border-bottom:3px solid var(--blue-btn)}
+.audience a{color:var(--text);text-decoration:none;padding-bottom:8px;margin-bottom:-15px;border-bottom:3px solid transparent}
+.audience a.on{color:var(--blue-btn);border-bottom-color:var(--blue-btn)}
+
+/* Hero */
+.hero{
+  position:relative;min-height:480px;color:#fff;
+  background:#004E82 url("img/DSC_4467.jpg") right center / cover no-repeat;
+  display:flex;align-items:center
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,
+    rgba(0,78,130,.97) 0%,
+    rgba(0,108,180,.92) 28%,
+    rgba(0,108,180,.72) 48%,
+    rgba(0,108,180,.35) 68%,
+    rgba(0,108,180,.08) 100%);
+  pointer-events:none
+}
+.hero-in{position:relative;z-index:1;padding:64px 0;max-width:640px}
+.hero h1{
+  font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:42px;
+  line-height:1.18;margin-bottom:24px;color:#fff;letter-spacing:-.015em
+}
+.hero .lead{font-size:19px;line-height:1.55;margin-bottom:16px;opacity:.98;max-width:34em}
+.hero .lead + .lead{margin-bottom:32px;font-size:18px}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
+.hero .btn-ghost{
+  display:inline-block;padding:14px 26px;border:1.5px solid #fff;border-radius:4px;
+  color:#fff!important;font-family:Montserrat,Arial,sans-serif;font-weight:600;
+  font-size:15px;text-decoration:none!important;background:transparent;cursor:pointer
+}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero .link-req{
+  color:#fff;font-weight:600;font-size:16px;text-decoration:none;
+  background:none;border:0;cursor:pointer;font-family:inherit;padding:0
+}
+.hero .link-req:hover{text-decoration:underline}
+
+.sec{padding:64px 0}
+.sec h2{
+  font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:28px;
+  text-align:center;margin-bottom:36px;color:#111
+}
+.sec .sub{text-align:center;max-width:720px;margin:-16px auto 36px;color:var(--muted);font-size:15px}
+
+/* Для кого — светло-серый */
+.band-gray{background:var(--band)}
+.icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 32px;max-width:1000px;margin:0 auto}
+.icon-item{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.icon-item .ico{
+  width:48px;height:48px;display:grid;place-items:center;
+  background:#fff;border-radius:10px;border:1px solid var(--line)
+}
+.icon-item .ico svg{width:28px;height:28px;stroke:var(--blue-mid);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.icon-item p{font-size:15px;line-height:1.45;color:var(--text)}
+.icon-item strong{font-family:Montserrat,Arial,sans-serif}
+
+/* Задачи — белый, кликабельные */
+.task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.task-card{
+  display:flex;flex-direction:column;gap:10px;padding:22px 20px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;
+  color:inherit;text-decoration:none!important;transition:border-color .2s,box-shadow .2s
+}
+.task-card:hover{border-color:var(--blue-btn);box-shadow:0 8px 24px rgba(33,150,243,.12);text-decoration:none}
+.task-card .num{
+  font-family:Montserrat,Arial,sans-serif;font-size:22px;font-weight:700;
+  color:var(--blue-btn);line-height:1
+}
+.task-card h3{font-family:Montserrat,Arial,sans-serif;font-size:16px;font-weight:600;line-height:1.35;color:var(--text)}
+.task-card p{font-size:14px;color:var(--muted);line-height:1.45;flex:1}
+.task-card .more{font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;color:var(--blue-btn);margin-top:6px}
+
+/* Направления */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc{text-align:center}
+.svc-ph{
+  width:100%;aspect-ratio:16/10;border-radius:12px;margin-bottom:16px;
+  background:#EEF5FB;border:1.5px dashed #90CAF9;
+  display:grid;place-items:center;font-family:Montserrat,Arial,sans-serif;
+  font-size:13px;font-weight:600;color:#64B5F6;letter-spacing:.02em
+}
+.svc h3{font-family:Montserrat,Arial,sans-serif;font-size:17px;font-weight:600;color:var(--blue-btn);margin-bottom:14px;line-height:1.3;min-height:2.6em}
+.svc .btn-order{
+  display:inline-block;padding:10px 22px;border:1.5px solid var(--blue-btn);
+  border-radius:6px;background:#fff;color:var(--blue-btn);font-family:Montserrat,Arial,sans-serif;
+  font-weight:600;font-size:14px;text-decoration:none!important
+}
+.svc .btn-order:hover{background:#E8F4FB}
+
+/* Проекты */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.proj-card{
+  display:grid;grid-template-columns:140px 1fr;gap:18px;align-items:center;
+  padding:16px;border:1px solid var(--line);border-radius:10px;background:#fff;
+  text-decoration:none!important;color:inherit;transition:border-color .2s,box-shadow .2s
+}
+.proj-card:hover{border-color:var(--blue-btn);box-shadow:0 8px 24px rgba(33,150,243,.1)}
+.proj-ph{
+  aspect-ratio:4/3;border-radius:8px;background:#EEF5FB;border:1px dashed #90CAF9;
+  display:grid;place-items:center;font-size:11px;color:var(--blue-mid);text-align:center;padding:8px;font-family:Montserrat,Arial,sans-serif;font-weight:600
+}
+.proj-card h3{font-family:Montserrat,Arial,sans-serif;font-size:17px;font-weight:700;margin-bottom:6px;line-height:1.3}
+.proj-card p{font-size:14px;color:var(--muted);line-height:1.45}
+.proj-card .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--blue-mid);margin-bottom:8px;font-family:Montserrat,Arial,sans-serif}
+
+/* Команда */
+.specs{background:var(--blue-spec);color:#fff;padding:64px 0}
+.specs h2{color:#fff;margin-bottom:16px}
+.specs .sub{text-align:center;max-width:700px;margin:0 auto 40px;font-size:15px;opacity:.95}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 24px;max-width:900px;margin:0 auto}
+.spec{text-align:center}
+.spec .ava{
+  width:120px;height:120px;border-radius:50%;margin:0 auto 14px;
+  background:rgba(255,255,255,.18);border:3px solid rgba(255,255,255,.35);
+  display:grid;place-items:center;font-size:12px;opacity:.9
+}
+.spec .name{font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:15px;margin-bottom:4px;line-height:1.3}
+.spec .name .patronymic{display:block}
+.spec .role{font-size:13px;opacity:.9}
+
+/* Контакты — как у ЦДМ: по центру, телефон крупно */
+.contacts{padding:72px 0 80px;background:#fff;text-align:center}
+.contacts h2{margin-bottom:16px}
+.contacts .intro{
+  max-width:34em;margin:0 auto 28px;font-size:17px;line-height:1.5;color:var(--text)
+}
+.contacts .phone{
+  display:block;font-family:Montserrat,Arial,sans-serif;font-weight:700;
+  font-size:28px;line-height:1.25;color:var(--blue);text-decoration:none;margin-bottom:14px
+}
+.contacts .phone:hover{text-decoration:underline}
+.contacts .addr{
+  font-size:16px;color:var(--text);margin-bottom:10px;line-height:1.45
+}
+.contacts .mail{
+  display:inline-block;font-family:Montserrat,Arial,sans-serif;font-weight:700;
+  font-size:18px;color:var(--blue);text-decoration:none;margin-bottom:28px
+}
+.contacts .mail:hover{text-decoration:underline}
+.contacts .btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 28px;border:1.5px solid var(--blue);
+  border-radius:6px;background:#fff;color:var(--blue);
+  font-family:Montserrat,Arial,sans-serif;font-weight:600;font-size:15px;
+  cursor:pointer
+}
+.contacts .btn-outline:hover{background:#E8F4FB}
+
+.social{padding:48px 0 56px;text-align:center;border-top:1px solid var(--line)}
+.social h2{font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:26px;margin-bottom:24px;color:#111}
+.soc-icons{display:flex;justify-content:center;gap:16px}
+.soc-icons a{
+  width:48px;height:48px;border-radius:50%;background:var(--blue-btn);color:#fff;
+  display:grid;place-items:center;text-decoration:none;font-family:Montserrat,Arial,sans-serif;
+  font-weight:700;font-size:12px
+}
+.soc-icons a:hover{background:var(--blue-deep)}
+
+/* Футер как на samsmu.ru */
+.ft{background:var(--ft-bg);color:#fff;padding:28px 0 32px;font-size:14px;line-height:1.45}
+.ft a{color:#fff;text-decoration:none}
+.ft a:hover{text-decoration:underline}
+.ft-top{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.85);margin-bottom:22px;
+  font-size:13px
+}
+.ft-top .up{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.ft-offices{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px 48px;margin-bottom:28px;max-width:720px
+}
+.ft-offices .lbl{font-weight:700;margin-bottom:4px}
+.ft-offices a{display:inline}
+.ft-nav{
+  display:flex;flex-wrap:wrap;gap:10px 28px;margin-bottom:18px;font-size:14px
+}
+.ft-nav a{white-space:nowrap}
+.ft-gov{display:grid;gap:8px;margin-bottom:22px;font-size:13px}
+.ft-bottom{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;
+  font-size:12px;opacity:.95
+}
+.ft-bottom .cc{max-width:48em;line-height:1.4}
+.age{
+  width:44px;height:44px;border-radius:50%;border:2px solid #fff;
+  display:grid;place-items:center;font-family:Montserrat,Arial,sans-serif;
+  font-weight:700;font-size:14px;flex:none
+}
+
+/* Модалка заявки */
+.modal[hidden]{display:none!important}
+.modal{
+  position:fixed;inset:0;z-index:100;display:grid;place-items:center;
+  background:rgba(10,40,70,.55);padding:20px
+}
+.modal-box{
+  background:#fff;border-radius:10px;width:min(480px,100%);padding:32px 28px 28px;
+  box-shadow:0 24px 64px rgba(0,0,0,.28);position:relative;max-height:calc(100vh - 40px);overflow:auto
+}
+.modal-box h2{font-family:Montserrat,Arial,sans-serif;font-size:22px;font-weight:700;margin-bottom:8px;text-align:left}
+.modal-box .hint{font-size:14px;color:var(--muted);margin-bottom:22px}
+.modal-close{
+  position:absolute;top:14px;right:14px;width:36px;height:36px;border:0;background:transparent;
+  font-size:24px;line-height:1;cursor:pointer;color:var(--muted)
+}
+.modal-close:hover{color:var(--text)}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;margin-bottom:6px}
+.field .req{color:#C62828}
+.field input[type=text],
+.field input[type=tel],
+.field input[type=email]{
+  width:100%;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:6px;
+  font:inherit;font-size:15px
+}
+.field input:focus{outline:2px solid var(--blue-btn);outline-offset:1px;border-color:var(--blue-btn)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.4;color:var(--muted);margin:8px 0 20px}
+.consent input{margin-top:3px;flex:none}
+.btn-send{
+  display:inline-flex;align-items:center;justify-content:center;width:100%;height:48px;
+  background:var(--blue-btn);color:#fff;border:0;border-radius:6px;
+  font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:15px;cursor:pointer
+}
+.btn-send:hover{background:var(--blue-mid)}
+.btn-send:disabled{background:#BDBDBD;cursor:not-allowed}
+.modal-ok{text-align:center;padding:12px 0}
+.modal-ok p{margin-bottom:18px;font-size:15px}
+
+@media (max-width:900px){
+  .nav-main,.audience{display:none}
+  .hero{min-height:400px;background-position:70% center}
+  .hero h1{font-size:28px}
+  .hero .lead{font-size:16px}
+  .hero-in{max-width:100%;padding:40px 0}
+  .icon-grid,.task-grid,.svc-grid,.proj-grid,.spec-grid,.ft-offices{grid-template-columns:1fr}
+  .ft-top{flex-direction:column;align-items:flex-start}
+  .contacts .phone{font-size:22px}
+  .proj-card{grid-template-columns:100px 1fr}
+  .svc h3{min-height:0}
+}
+
+/* —— PDF: альбом A4, один блок = один лист —— */
+@page{size:A4 landscape;margin:10mm}
+@media print{
+  html,body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .mockbar,.toputil,.modal-backdrop,script{display:none!important}
+  header{
+    break-after:page;page-break-after:always;
+    padding:8px 0 0
+  }
+  header .nav-main a:not(.btn-eios),.audience{font-size:11px}
+  header .hd{padding:8px 0}
+  header .logo img{height:40px}
+  header .logo b{font-size:11px}
+  section{
+    break-after:page;page-break-after:always;
+    break-inside:avoid;page-break-inside:avoid;
+    padding:20px 0!important;min-height:0!important
+  }
+  section:last-of-type,footer{break-after:auto;page-break-after:auto}
+  .hero{min-height:0!important;height:170mm;display:flex;align-items:center}
+  .hero-in{padding:24px 0;max-width:520px}
+  .hero h1{font-size:28px;margin-bottom:14px}
+  .hero .lead{font-size:14px;margin-bottom:10px}
+  .sec h2,.specs h2,.social h2,.contacts h2{font-size:24px;margin-bottom:16px}
+  .sec .sub,.specs .sub{margin-bottom:16px;font-size:13px}
+  .icon-grid{gap:16px 20px}
+  .icon-item p{font-size:12px}
+  .task-grid{gap:12px}
+  .task-card{padding:14px}
+  .task-card h3{font-size:14px}
+  .task-card p{font-size:12px}
+  .svc-ph{aspect-ratio:16/9;margin-bottom:10px}
+  .svc h3{font-size:15px;min-height:0;margin-bottom:10px}
+  .proj-grid{gap:12px}
+  .proj-card{padding:12px;gap:12px}
+  .proj-ph{font-size:11px}
+  .specs{padding:20px 0!important}
+  .spec-grid{gap:16px 12px}
+  .spec .ava{width:88px;height:88px;font-size:11px;margin-bottom:8px}
+  .spec .name{font-size:13px}
+  .spec .role{font-size:11px}
+  .contacts{padding:20px 0!important}
+  .contacts .phone{font-size:22px}
+  .social{padding:20px 0!important}
+  footer{padding:16px 0!important}
+  a{text-decoration:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="mockbar">
+  МАКЕТ · стиль страницы «Центр доказательной медицины и биостатистики» · содержимое НИИ нейронаук
+  <span> · раздел «Бизнесу» на samsmu.ru · не отдельный сайт</span>
+</div>
+
+<div class="toputil"><div class="wrap">
+  <a href="#">ОПЛАТА</a><span>RU · EN</span>
+  <a href="#">СВЕДЕНИЯ ОБ ОБРАЗОВАТЕЛЬНОЙ ОРГАНИЗАЦИИ</a>
+  <a href="#">СЛАБОВИДЯЩИМ</a>
+</div></div>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#">
+      <img src="img/samgmu-logo.png" alt="СамГМУ">
+      <b>Самарский государственный медицинский университет</b>
+    </a>
+    <nav class="nav-main" aria-label="Меню">
+      <a href="#">Образование</a>
+      <a href="#">Инновации и наука</a>
+      <a href="#">Клиники</a>
+      <a href="#kontakty">Контакты</a>
+      <a class="btn-eios" href="#">→ В ЭИОС</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <nav class="audience" aria-label="Аудитории">
+      <a href="#">Университет</a>
+      <a href="#">Поступающим</a>
+      <a href="#">Студентам</a>
+      <a href="#">Выпускникам</a>
+      <a href="#">Специалистам</a>
+      <a href="#">Сотрудникам</a>
+      <a class="on" href="#">Бизнесу</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 1. Hero -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-in">
+      <h1>Прикладные нейроисследования и разработки</h1>
+      <p class="lead">Научно-исследовательский институт нейронаук СамГМУ занимается комплексным сопровождением прикладных исследований на всех этапах: от научной проработки идеи до разработки прототипа устройств и программного обеспечения.</p>
+      <p class="lead">Нейрофизиологические измерения, научное обоснование гипотез и пользовательские исследования прототипов.</p>
+      <div class="hero-cta">
+        <a class="btn-ghost" href="usluga.html">Заказать услугу</a>
+        <button type="button" class="link-req" data-open-modal>Оставить заявку &gt;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Для кого — светло-серый -->
+<section class="sec band-gray" id="dlya-kogo">
+  <div class="wrap">
+    <h2>Для кого</h2>
+    <div class="icon-grid">
+      <div class="icon-item">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><rect x="6" y="10" width="12" height="20" rx="1"/><rect x="22" y="6" width="12" height="24" rx="1"/><path d="M10 16h4M10 20h4M26 12h4M26 16h4M26 20h4"/></svg>
+        </div>
+        <p><strong>R&amp;D-команды</strong><br>разработчики цифровых медицинских и нейротехнологических решений</p>
+      </div>
+      <div class="icon-item">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><rect x="5" y="12" width="30" height="18" rx="2"/><path d="M5 18h30"/><circle cx="12" cy="24" r="2"/><path d="M18 24h12"/></svg>
+        </div>
+        <p><strong>Банки</strong><br>продуктовые и UX-команды, оценка пути клиента и коммуникаций</p>
+      </div>
+      <div class="icon-item">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="12" r="6"/><path d="M8 32c2-6 8-9 12-9s10 3 12 9"/><circle cx="30" cy="14" r="4"/><path d="M28 32c1-4 4-6 7-7"/></svg>
+        </div>
+        <p><strong>HR-Tech</strong><br>оценка внимания, стресса, когнитивной нагрузки в рабочих сценариях</p>
+      </div>
+      <div class="icon-item">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M20 6v28"/><path d="M12 10h16v6c0 4-3 8-8 10-5-2-8-6-8-10v-6z"/><circle cx="20" cy="18" r="3"/></svg>
+        </div>
+        <p><strong>Фарма</strong><br>объективные нейрофизиологические данные в исследованиях и пилотах</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. С какими задачами — белый, кликабельные -->
+<section class="sec" id="zadachi">
+  <div class="wrap">
+    <h2>С какими задачами к нам приходят</h2>
+    <p class="sub">Выберите задачу — откроется подробное описание услуги</p>
+    <div class="task-grid">
+      <a class="task-card" href="usluga.html#task-01">
+        <div class="num">01</div>
+        <h3>Провести нейрофизиологическое исследование</h3>
+        <p>ЭЭГ, айтрекинг, биосигналы — протокол, измерения, отчёт</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#task-02">
+        <div class="num">02</div>
+        <h3>Провести научное обоснование для разработки</h3>
+        <p>Обзор методов, дизайн исследования, проверяемая гипотеза до вложений в прототип</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#task-03">
+        <div class="num">03</div>
+        <h3>Пользовательское исследование прототипа</h3>
+        <p>Оценка реакции пользователей на интерфейс, сценарий или стимул</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#task-04">
+        <div class="num">04</div>
+        <h3>Объективные показатели в исследовании реабилитации</h3>
+        <p>Анализ движений, VR-среда, биологическая обратная связь</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#task-05">
+        <div class="num">05</div>
+        <h3>Оценить реакцию на рекламу, упаковку, сайт или сервис</h3>
+        <p>Нейромаркетинг: ЭЭГ, биометрия, айтрекинг</p>
+        <span class="more">Подробнее →</span>
+      </a>
+      <a class="task-card" href="usluga.html#task-06">
+        <div class="num">06</div>
+        <h3>Разработать прототип устройства или ПО</h3>
+        <p>От гипотезы и эксперимента — к макету методики, устройства или модуля</p>
+        <span class="more">Подробнее →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Направления деятельности -->
+<section class="sec band-gray" id="napravleniya">
+  <div class="wrap">
+    <h2>Направления деятельности</h2>
+    <div class="svc-grid">
+      <article class="svc">
+        <div class="svc-ph" aria-hidden="true">фото</div>
+        <h3>Нейродиагностика<br>и мониторинг</h3>
+        <a class="btn-order" href="usluga.html#napr-diagnostika">Заказать услугу</a>
+      </article>
+      <article class="svc">
+        <div class="svc-ph" aria-hidden="true">фото</div>
+        <h3>Реабилитация<br>и нейротехнологии</h3>
+        <a class="btn-order" href="usluga.html#napr-reabilitaciya">Заказать услугу</a>
+      </article>
+      <article class="svc">
+        <div class="svc-ph" aria-hidden="true">фото</div>
+        <h3>Нейромаркетинг<br>и поведение</h3>
+        <a class="btn-order" href="usluga.html#napr-marketing">Заказать услугу</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Наши проекты -->
+<section class="sec" id="proekty">
+  <div class="wrap">
+    <h2>Наши проекты</h2>
+    <p class="sub">Заготовки карточек — тексты и фото уточняются</p>
+    <div class="proj-grid">
+      <a class="proj-card" href="#">
+        <div class="proj-ph">фото<br>проекта</div>
+        <div>
+          <span class="tag">Нейродиагностика</span>
+          <h3>«Нейро-зеркало»</h3>
+          <p class="ph">Система скрининга и мониторинга когнитивного состояния людей 60+</p>
+        </div>
+      </a>
+      <a class="proj-card" href="#">
+        <div class="proj-ph">фото<br>проекта</div>
+        <div>
+          <span class="tag">Реабилитация</span>
+          <h3>Эрготерапия</h3>
+          <p class="ph">Комплекс социально-бытовой реабилитации с эрготерапией в VR-окружении</p>
+        </div>
+      </a>
+      <a class="proj-card" href="#">
+        <div class="proj-ph">фото<br>проекта</div>
+        <div>
+          <span class="tag">Нейродиагностика</span>
+          <h3>Диагностика ЧМТ</h3>
+          <p class="ph">Аппаратно-программный комплекс для ранней диагностики травматического повреждения головного мозга</p>
+        </div>
+      </a>
+      <a class="proj-card" href="#">
+        <div class="proj-ph">фото<br>проекта</div>
+        <div>
+          <span class="tag">Нейромаркетинг</span>
+          <h3>Нейромаркетинг: исследование клиентского пути</h3>
+          <p class="ph">Как потенциальные клиенты реагируют на этапы оформления услуги на сайте</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Наша команда -->
+<section class="specs" id="komanda">
+  <div class="wrap">
+    <h2>Наша команда</h2>
+    <p class="sub">В институте работают специалисты с опытом нейрофизиологических исследований, разработки протоколов и прикладных нейротехнологий.</p>
+    <div class="spec-grid">
+      <div class="spec">
+        <div class="ava ph">фото</div>
+        <div class="name">Захаров Александр<span class="patronymic">Владимирович</span></div>
+        <div class="role">Директор НИИ, к.м.н., доцент</div>
+      </div>
+      <div class="spec">
+        <div class="ava ph">фото</div>
+        <div class="name">Романчук Наталья<span class="patronymic">Петровна</span></div>
+        <div class="role">Заведующая лабораторией нейроморфных систем, к.м.н., доцент</div>
+      </div>
+      <div class="spec">
+        <div class="ava ph">фото</div>
+        <div class="name">Сергеева Мария<span class="patronymic">Станиславовна</span></div>
+        <div class="role">Ведущий специалист лаборатории нейроинтерфейсов и нейротехнологий, канд. биол. наук</div>
+      </div>
+      <div class="spec">
+        <div class="ava ph">фото</div>
+        <div class="name">Широлапов Игорь<span class="patronymic">Викторович</span></div>
+        <div class="role">Заведующий лабораторией трансляционных исследований и персонализированной медицины, к.м.н., доцент</div>
+      </div>
+      <div class="spec">
+        <div class="ava ph">фото</div>
+        <div class="name">Адельшин Павел<span class="patronymic">Александрович</span></div>
+        <div class="role">Технический руководитель междисциплинарной команды разработки, ведущий программист</div>
+      </div>
+      <div class="spec">
+        <div class="ava ph">фото</div>
+        <div class="name">Гайда Артем<span class="patronymic">Сергеевич</span></div>
+        <div class="role">Специалист лаборатории нейроморфных систем, разработчик электронных схем</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Контакты — компоновка как у ЦДМ -->
+<section class="contacts" id="kontakty">
+  <div class="wrap">
+    <h2>Контакты</h2>
+    <p class="intro">Для обсуждения деталей и заказа исследований свяжитесь с нами по телефону или электронной почте</p>
+    <a class="phone" href="tel:+78463741004">8 (846) 374-10-04 доб.&nbsp;4548</a>
+    <p class="addr">443079, г.&nbsp;Самара, ул.&nbsp;Гагарина, 18</p>
+    <a class="mail" href="mailto:neuro@samsmu.ru">neuro@samsmu.ru</a>
+    <div>
+      <button type="button" class="btn-outline" data-open-modal>Оставить заявку</button>
+    </div>
+  </div>
+</section>
+
+<section class="social">
+  <div class="wrap">
+    <h2>Присоединяйтесь к нам в соцсетях</h2>
+    <div class="soc-icons">
+      <a href="https://vk.com/nsri_samsmu" target="_blank" rel="noopener" title="ВКонтакте">VK</a>
+      <a href="#" title="Telegram">TG</a>
+      <a href="#" title="MAX">MAX</a>
+      <a href="#" title="Дзен">Дз</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <span>© 1919 – 2026 ФГБОУ ВО СамГМУ Минздрава России</span>
+      <a class="up" href="#hero">↑ Наверх</a>
+    </div>
+
+    <div class="ft-offices">
+      <div>
+        <div class="lbl">Канцелярия</div>
+        <div><a href="tel:+78463741003">+7 (846) 374-10-03</a></div>
+        <div><a href="mailto:info@samsmu.ru">info@samsmu.ru</a></div>
+      </div>
+      <div>
+        <div class="lbl">Приемная комиссия</div>
+        <div><a href="tel:+78463740011">+7 (846) 374-00-11</a></div>
+        <div><a href="mailto:priem@samsmu.ru">priem@samsmu.ru</a></div>
+      </div>
+    </div>
+
+    <nav class="ft-nav" aria-label="Служебные ссылки">
+      <a href="#">Контакты и реквизиты</a>
+      <a href="#">Сведения об образовательной организации</a>
+      <a href="#">Противодействие коррупции и терроризму</a>
+      <a href="#">Обращения граждан</a>
+      <a href="#">Частые вопросы</a>
+      <a href="#">Сайты-партнеры</a>
+      <a href="#">Политика обработки персональных данных</a>
+      <a href="#">Карта сайта</a>
+    </nav>
+
+    <div class="ft-gov">
+      <a href="#">Правительство России об антитеррористической безопасности</a>
+      <a href="#">Правительство Самарской области о противодействии терроризму и его идеологии</a>
+    </div>
+
+    <div class="ft-bottom">
+      <p class="cc">Собственные материалы сайта доступны по лицензии Creative Commons Attribution 4.0 International, если не указано иное</p>
+      <div class="age" aria-label="Возрастное ограничение 12+">12+</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Модалка «Оставить заявку» -->
+<div class="modal" id="modal-zayavka" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <button type="button" class="modal-close" data-close-modal aria-label="Закрыть">×</button>
+    <div id="modal-form-wrap">
+      <h2 id="modal-title">Оставить заявку</h2>
+      <p class="hint">Заполните форму — мы свяжемся с вами по указанному контакту</p>
+      <form id="zayavka-form" novalidate>
+        <div class="field">
+          <label for="fio">ФИО <span class="req">*</span></label>
+          <input id="fio" name="fio" type="text" autocomplete="name" required placeholder="Иванов Иван Иванович">
+        </div>
+        <div class="field">
+          <label for="phone">Телефон <span class="req">*</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 (___) ___-__-__">
+        </div>
+        <div class="field">
+          <label for="email">Эл. почта <span class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="name@company.ru">
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="pdn" name="pdn" required>
+          <span>Согласен(на) на обработку персональных данных <span class="req">*</span></span>
+        </label>
+        <button type="submit" class="btn-send">Отправить</button>
+      </form>
+    </div>
+    <div id="modal-ok" class="modal-ok" hidden>
+      <h2>Заявка принята</h2>
+      <p class="ph">Макет: заявка не отправляется на сервер. В рабочей версии письмо уйдёт на neuro@samsmu.ru</p>
+      <button type="button" class="btn-send" data-close-modal style="width:auto;padding:0 28px;margin:0 auto">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var modal = document.getElementById('modal-zayavka');
+  var formWrap = document.getElementById('modal-form-wrap');
+  var ok = document.getElementById('modal-ok');
+  var form = document.getElementById('zayavka-form');
+
+  function openModal() {
+    formWrap.hidden = false;
+    ok.hidden = true;
+    form.reset();
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var first = document.getElementById('fio');
+    if (first) first.focus();
+  }
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-modal]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
+  });
+  document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+    el.addEventListener('click', closeModal);
+  });
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    formWrap.hidden = true;
+    ok.hidden = false;
+  });
+
+  if (sessionStorage.getItem('openZayavka') === '1') {
+    sessionStorage.removeItem('openZayavka');
+    openModal();
+  }
+})();
+</script>
+
+</body>
+</html>

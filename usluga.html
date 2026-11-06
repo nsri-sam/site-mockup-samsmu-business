@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Услуги НИИ нейронаук — подробное описание · макет СамГМУ Бизнесу</title>
+<style>
+@font-face{font-family:Montserrat;src:url("fonts/Montserrat-Regular.ttf") format("truetype");font-weight:400}
+@font-face{font-family:Montserrat;src:url("fonts/Montserrat-SemiBold.ttf") format("truetype");font-weight:600}
+@font-face{font-family:Montserrat;src:url("fonts/Montserrat-Bold.ttf") format("truetype");font-weight:700}
+@font-face{font-family:Open Sans;src:url("fonts/OpenSans-Regular.ttf") format("truetype");font-weight:400}
+
+:root{
+  --blue-btn:#006CB4;--blue-deep:#004E82;--blue-mid:#3091D1;--ft-bg:#006BB3;
+  --text:#222;--muted:#666;--line:#E0E0E0;--band:#F5F5F5;--wrap:900px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6;font-size:16px}
+a{color:var(--blue-btn);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.ph{outline:1.5px dashed #90CAF9;outline-offset:3px}
+
+.mockbar{
+  position:sticky;top:0;z-index:50;background:#111;color:#fff;
+  font-family:Montserrat,Arial,sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.03em;padding:10px 16px;text-align:center
+}
+.mockbar span{opacity:.7;font-weight:400}
+
+.top{border-bottom:1px solid var(--line);padding:14px 0}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.back{font-family:Montserrat,Arial,sans-serif;font-weight:600;font-size:14px}
+.crumb{font-size:13px;color:var(--muted)}
+.crumb a{color:var(--blue-mid)}
+
+.page-head{padding:40px 0 28px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.page-head .eyebrow{
+  font-family:Montserrat,Arial,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:10px
+}
+.page-head h1{
+  font-family:Montserrat,Arial,sans-serif;font-size:32px;font-weight:700;
+  line-height:1.2;margin-bottom:12px;letter-spacing:-.01em
+}
+.page-head .lead{font-size:17px;color:var(--muted);max-width:40em}
+
+.toc{
+  display:flex;flex-wrap:wrap;gap:8px 16px;padding:16px 0 8px;
+  font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600
+}
+.toc a{color:var(--blue-mid)}
+
+.block{padding:40px 0;border-bottom:1px solid var(--line);scroll-margin-top:56px}
+.block:last-of-type{border-bottom:0}
+.block .num{
+  font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:700;
+  color:var(--blue-btn);letter-spacing:.06em;margin-bottom:8px
+}
+.block h2{font-family:Montserrat,Arial,sans-serif;font-size:24px;font-weight:700;margin-bottom:14px;line-height:1.25}
+.block p{margin-bottom:12px;font-size:16px}
+.block ul{margin:12px 0 16px 1.2em}
+.block li{margin-bottom:6px}
+.block .meta{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px
+}
+.block .meta div{
+  background:var(--band);border-radius:8px;padding:14px 16px;font-size:14px
+}
+.block .meta b{display:block;font-family:Montserrat,Arial,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+
+.napr{background:var(--band);padding:40px 0;margin-top:24px}
+.napr h2{font-family:Montserrat,Arial,sans-serif;font-size:26px;text-align:center;margin-bottom:28px}
+.napr-grid{display:grid;gap:20px}
+.napr-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;scroll-margin-top:56px}
+.napr-card h3{font-family:Montserrat,Arial,sans-serif;font-size:20px;font-weight:700;color:var(--blue-mid);margin-bottom:10px}
+.napr-card p{font-size:15px;margin-bottom:10px}
+.napr-card ul{margin-left:1.1em;font-size:15px}
+
+.cta-bar{
+  display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+  padding:28px 0 48px
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;
+  background:var(--blue-btn);color:#fff!important;border-radius:6px;
+  font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:15px;text-decoration:none!important
+}
+.btn:hover{background:var(--blue-mid)}
+.btn-sec{
+  display:inline-flex;align-items:center;height:48px;padding:0 22px;
+  border:1.5px solid var(--blue-btn);border-radius:6px;color:var(--blue-btn)!important;
+  font-family:Montserrat,Arial,sans-serif;font-weight:600;font-size:14px;text-decoration:none!important;background:#fff
+}
+
+.ft{background:var(--ft-bg);color:#fff;padding:28px 0 32px;font-size:13px}
+.ft a{color:#fff;text-decoration:none}
+.ft a:hover{text-decoration:underline}
+.ft-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.85);margin-bottom:18px}
+.ft-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;font-size:12px;margin-top:18px}
+.age{width:40px;height:40px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:13px}
+
+@media (max-width:700px){
+  .page-head h1{font-size:24px}
+  .block .meta{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body id="top">
+
+<div class="mockbar">
+  МАКЕТ · страница услуг НИИ нейронаук
+  <span> · переход с «Заказать услугу» и из блока задач</span>
+</div>
+
+<div class="top">
+  <div class="wrap">
+    <a class="back" href="index.html">← Назад к странице НИИ</a>
+    <div class="crumb"><a href="index.html">Бизнесу · НИИ нейронаук</a> / Услуги</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="page-head">
+    <div class="eyebrow">Услуги института</div>
+    <h1>Подробное описание работ</h1>
+    <p class="lead">Ниже — состав услуг по типовым задачам заказчика и по направлениям деятельности. Формулировки — рабочие заготовки макета.</p>
+  </header>
+
+  <nav class="toc" aria-label="Содержание">
+    <a href="#task-01">01 Исследование</a>
+    <a href="#task-02">02 Обоснование</a>
+    <a href="#task-03">03 Прототип</a>
+    <a href="#task-04">04 Реабилитация</a>
+    <a href="#task-05">05 Нейромаркетинг</a>
+    <a href="#task-06">06 Разработка</a>
+    <a href="#napravleniya">Направления</a>
+  </nav>
+
+  <article class="block" id="task-01">
+    <div class="num">Задача 01</div>
+    <h2>Провести нейрофизиологическое исследование</h2>
+    <p class="ph">Подбираем протокол под вопрос заказчика: ЭЭГ, айтрекинг, биосигналы или их сочетание. Готовим дизайн, проводим измерения в лаборатории НИИ, формируем отчёт с интерпретацией для команды разработки или клинического партнёра.</p>
+    <ul class="ph">
+      <li>Постановка гипотезы и конечных точек</li>
+      <li>Рекрутинг и проведение сессий</li>
+      <li>Обработка сигналов и отчёт</li>
+    </ul>
+    <div class="meta">
+      <div><b>Формат</b>НИР / пилот</div>
+      <div><b>Результат</b>Отчёт + сырые данные по договорённости</div>
+      <div><b>Направление</b>Нейродиагностика</div>
+    </div>
+  </article>
+
+  <article class="block" id="task-02">
+    <div class="num">Задача 02</div>
+    <h2>Провести научное обоснование для разработки</h2>
+    <p class="ph">До вложений в прототип: обзор методов и данных, формулировка проверяемой гипотезы, дизайн исследования и критерии успеха. Снижает риск «сделали устройство — нечего измерять».</p>
+    <ul class="ph">
+      <li>Литобзор и карта методов</li>
+      <li>Дизайн эксперимента</li>
+      <li>Рекомендации по этапу разработки</li>
+    </ul>
+    <div class="meta">
+      <div><b>Формат</b>Аналитический этап</div>
+      <div><b>Результат</b>Концепт исследования</div>
+      <div><b>Направление</b>Все направления</div>
+    </div>
+  </article>
+
+  <article class="block" id="task-03">
+    <div class="num">Задача 03</div>
+    <h2>Пользовательское нейрофизиологическое исследование прототипа</h2>
+    <p class="ph">Проверяем, как пользователи реально реагируют на интерфейс, сценарий или стимул: не опрос, а измерения. Подходит для цифровых продуктов, устройств и обучающих модулей.</p>
+    <ul class="ph">
+      <li>Сценарии использования</li>
+      <li>Сессии с целевой группой</li>
+      <li>Выводы для доработки UX / методики</li>
+    </ul>
+    <div class="meta">
+      <div><b>Формат</b>Usability + биометрия</div>
+      <div><b>Результат</b>Отчёт с рекомендациями</div>
+      <div><b>Направление</b>По задаче</div>
+    </div>
+  </article>
+
+  <article class="block" id="task-04">
+    <div class="num">Задача 04</div>
+    <h2>Объективные показатели в исследовании реабилитационной методики</h2>
+    <p class="ph">Анализ движений, VR-среда, биологическая обратная связь — чтобы методика опиралась на измеряемые показатели, а не только на субъективную оценку.</p>
+    <ul class="ph">
+      <li>Протокол оценки динамики</li>
+      <li>Запись и разметка сессий</li>
+      <li>Сводка для исследователя / клинициста</li>
+    </ul>
+    <div class="meta">
+      <div><b>Формат</b>Исследовательский пилот</div>
+      <div><b>Результат</b>Набор метрик + отчёт</div>
+      <div><b>Направление</b>Реабилитация</div>
+    </div>
+  </article>
+
+  <article class="block" id="task-05">
+    <div class="num">Задача 05</div>
+    <h2>Оценить реакцию на рекламу, упаковку, сайт или сервис</h2>
+    <p class="ph">Нейромаркетинг: ЭЭГ, биометрия и айтрекинг — три источника данных о внимании, эмоциональной реакции и точках потери на пути клиента.</p>
+    <ul class="ph">
+      <li>Дизайн стимулов и сценария</li>
+      <li>Мультимодальная запись</li>
+      <li>Разбор «где теряется внимание»</li>
+    </ul>
+    <div class="meta">
+      <div><b>Формат</b>Нейротест</div>
+      <div><b>Результат</b>Отчёт для продукта / маркетинга</div>
+      <div><b>Направление</b>Нейромаркетинг</div>
+    </div>
+  </article>
+
+  <article class="block" id="task-06">
+    <div class="num">Задача 06</div>
+    <h2>Разработать прототип устройства или ПО</h2>
+    <p class="ph">По результатам проверки гипотезы — макет методики, устройства или программного модуля. Можно зайти на любом этапе полного цикла: с идеей, с данными или с готовым решением на проверку.</p>
+    <ul class="ph">
+      <li>Техническое задание на прототип</li>
+      <li>Итерации с лабораторией</li>
+      <li>Документация опытного образца</li>
+    </ul>
+    <div class="meta">
+      <div><b>Формат</b>ОКР / прототип</div>
+      <div><b>Результат</b>Макет + описание</div>
+      <div><b>Направление</b>По задаче</div>
+    </div>
+  </article>
+</div>
+
+<section class="napr" id="napravleniya">
+  <div class="wrap">
+    <h2>Направления деятельности</h2>
+    <div class="napr-grid">
+      <article class="napr-card" id="napr-diagnostika">
+        <h3>Нейродиагностика и мониторинг</h3>
+        <p class="ph">Исследование функционального состояния нервной системы: ЭЭГ, айтрекинг, биосигналы, когнитивный скрининг, мониторинг сна — от постановки задачи до прототипа диагностического комплекса.</p>
+        <ul class="ph">
+          <li>Протоколы и конечные точки для цифровых решений</li>
+          <li>Нейрокогнитивный модуль в исследовании</li>
+          <li>Сравнение с референсными методиками</li>
+        </ul>
+      </article>
+      <article class="napr-card" id="napr-reabilitaciya">
+        <h3>Реабилитация и нейротехнологии</h3>
+        <p class="ph">Технологии и объективная оценка для реабилитации: анализ движений, VR-среда, биологическая обратная связь, нейроинтерфейсы.</p>
+        <ul class="ph">
+          <li>Оценка динамики восстановления</li>
+          <li>Пилоты методик в VR / с обратной связью</li>
+          <li>Прототипы комплексов реабилитации</li>
+        </ul>
+      </article>
+      <article class="napr-card" id="napr-marketing">
+        <h3>Нейромаркетинг и поведение</h3>
+        <p class="ph">Как люди реагируют на рекламу, упаковку, сайт и сервис: ЭЭГ, биометрия, айтрекинг — три источника данных вместо одних опросов.</p>
+        <ul class="ph">
+          <li>Нейротесты пользовательского пути</li>
+          <li>Сравнение вариантов коммуникации</li>
+          <li>Разбор точек потери внимания</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta-bar">
+    <div>
+      <strong>Готовы обсудить задачу?</strong>
+      <div style="font-size:14px;color:var(--muted);margin-top:4px">Напишите на <a href="mailto:neuro@samsmu.ru">neuro@samsmu.ru</a> или оставьте заявку на главной странице</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn-sec" href="index.html#zadachi">К списку задач</a>
+      <a class="btn" href="index.html" onclick="sessionStorage.setItem('openZayavka','1')">Оставить заявку</a>
+    </div>
+  </div>
+</div>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <span>© 1919 – 2026 ФГБОУ ВО СамГМУ Минздрава России</span>
+      <a href="#top">↑ Наверх</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:640px;margin-bottom:16px">
+      <div><b>Канцелярия</b><br><a href="tel:+78463741003">+7 (846) 374-10-03</a><br><a href="mailto:info@samsmu.ru">info@samsmu.ru</a></div>
+      <div><b>Приемная комиссия</b><br><a href="tel:+78463740011">+7 (846) 374-00-11</a><br><a href="mailto:priem@samsmu.ru">priem@samsmu.ru</a></div>
+    </div>
+    <div class="ft-bottom">
+      <span>Собственные материалы сайта доступны по лицензии Creative Commons Attribution 4.0 International, если не указано иное</span>
+      <div class="age" aria-label="12+">12+</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  if (location.hash) {
+    var el = document.querySelector(location.hash);
+    if (el) setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+  }
+})();
+</script>
+</body>
+</html>
