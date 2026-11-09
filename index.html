@@ -60,6 +60,10 @@ a:hover{text-decoration:underline}
   background:#004E82 url("img/DSC_4467.jpg") right center / cover no-repeat;
   display:flex;align-items:center
 }
+.hero > .wrap{
+  width:100%;flex:1 1 auto;align-self:stretch;
+  display:flex;align-items:center
+}
 .hero::before{
   content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,
@@ -70,7 +74,7 @@ a:hover{text-decoration:underline}
     rgba(0,108,180,.08) 100%);
   pointer-events:none
 }
-.hero-in{position:relative;z-index:1;padding:64px 0;max-width:640px}
+.hero-in{position:relative;z-index:1;padding:64px 0;max-width:640px;margin:0;width:100%}
 .hero h1{
   font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:42px;
   line-height:1.18;margin-bottom:24px;color:#fff;letter-spacing:-.015em
