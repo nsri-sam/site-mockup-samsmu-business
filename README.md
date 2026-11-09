@@ -4,7 +4,7 @@
 
 **Онлайн:** https://nsri-sam.github.io/site-mockup-samsmu-business/
 
-**Локально:** `index.html` · подробности услуг: `usluga.html`
+**Локально:** `index.html` · подробности услуг: `usluga.html` (9 сценариев + диапазоны по тарифу СамГМУ; без N)
 
 Другие макеты: [вариант А](https://nsri-sam.github.io/site-mockup-a/) · [вариант Б](https://nsri-sam.github.io/site-mockup-b/)
 

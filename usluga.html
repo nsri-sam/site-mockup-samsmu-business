@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Услуги НИИ нейронаук — подробное описание · макет СамГМУ Бизнесу</title>
+<title>Услуги НИИ нейронаук — сценарии и стоимость · макет СамГМУ Бизнесу</title>
 <style>
 @font-face{font-family:Montserrat;src:url("fonts/Montserrat-Regular.ttf") format("truetype");font-weight:400}
 @font-face{font-family:Montserrat;src:url("fonts/Montserrat-SemiBold.ttf") format("truetype");font-weight:600}
@@ -56,19 +56,39 @@ a:hover{text-decoration:underline}
   font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:700;
   color:var(--blue-btn);letter-spacing:.06em;margin-bottom:8px
 }
-.block h2{font-family:Montserrat,Arial,sans-serif;font-size:24px;font-weight:700;margin-bottom:14px;line-height:1.25}
-.block .desc-ph{
-  margin:0 0 8px;padding:14px 16px;border:1.5px dashed #90CAF9;border-radius:8px;
-  background:#F7FBFE;color:var(--blue-mid);font-size:14px;line-height:1.45
+.block h2{font-family:Montserrat,Arial,sans-serif;font-size:24px;font-weight:700;margin-bottom:12px;line-height:1.25}
+.block .pkg-lead{
+  font-size:16px;color:var(--muted);max-width:46em;margin-bottom:22px;line-height:1.55
 }
-.block .meta{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px
+
+.scenarios{
+  display:grid;grid-template-columns:1fr;gap:14px
 }
-.block .meta div{
-  background:var(--band);border-radius:8px;padding:14px 16px;font-size:14px
+.scenario{
+  display:grid;grid-template-columns:1fr auto;gap:16px 24px;align-items:start;
+  padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fff;
+  transition:border-color .2s,box-shadow .2s
 }
-.block .meta b{display:block;font-family:Montserrat,Arial,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
-.block .meta .ph-val{color:var(--blue-mid);font-style:italic}
+.scenario:hover{border-color:var(--blue-btn);box-shadow:0 8px 24px rgba(0,108,180,.1)}
+.scenario h3{
+  font-family:Montserrat,Arial,sans-serif;font-size:17px;font-weight:600;
+  line-height:1.35;margin-bottom:8px;color:var(--text)
+}
+.scenario .sc-desc{font-size:14px;color:var(--muted);line-height:1.5;max-width:38em}
+.scenario .price{
+  font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:18px;
+  color:var(--blue-deep);letter-spacing:-.01em;white-space:nowrap;
+  text-align:right;line-height:1.3;padding-top:2px
+}
+.scenario .price small{
+  display:block;font-size:11px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:4px
+}
+
+.note{
+  margin:28px 0 8px;padding:14px 16px;background:var(--band);border-radius:8px;
+  font-size:13px;color:var(--muted);line-height:1.5;max-width:52em
+}
 
 .cta-bar{
   display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
@@ -95,7 +115,9 @@ a:hover{text-decoration:underline}
 
 @media (max-width:700px){
   .page-head h1{font-size:24px}
-  .block .meta{grid-template-columns:1fr}
+  .block h2{font-size:20px}
+  .scenario{grid-template-columns:1fr;gap:12px}
+  .scenario .price{text-align:left;font-size:17px;padding-top:0;border-top:1px solid var(--line);padding-top:12px;width:100%}
 }
 </style>
 </head>
@@ -103,7 +125,7 @@ a:hover{text-decoration:underline}
 
 <div class="mockbar">
   МАКЕТ · страница услуг НИИ нейронаук
-  <span> · список услуг и пакеты по направлениям</span>
+  <span> · сценарии и стоимость по тарифу СамГМУ</span>
 </div>
 
 <div class="top">
@@ -116,8 +138,8 @@ a:hover{text-decoration:underline}
 <div class="wrap">
   <header class="page-head">
     <div class="eyebrow">Услуги института</div>
-    <h1>Подробное описание услуг</h1>
-    <p class="lead">Примерные пакеты по направлениям деятельности. Описание, формат, результат и ценовой диапазон — заготовки макета, уточняются при запросе.</p>
+    <h1>Сценарии исследований и ориентиры стоимости</h1>
+    <p class="lead">Три направления — по три типовых сценария. Диапазоны отражают работы по тарифу СамГМУ; точная смета формируется после технического задания.</p>
   </header>
 
   <nav class="toc" aria-label="Содержание">
@@ -130,35 +152,93 @@ a:hover{text-decoration:underline}
     <span id="task-01"></span>
     <div class="num">Пакет 01 · направление</div>
     <h2>Нейроюзабилити и аудит интерфейсов</h2>
-    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
-    <div class="meta">
-      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
-      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
-      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
+    <p class="pkg-lead">Объективно разбираем, куда смотрит пользователь и где «ломается» сценарий: айтрекинг, поведение, при необходимости ЭЭГ и КГР. На выходе — теплокарты, карта проблемных шагов и рекомендации по интерфейсу.</p>
+    <div class="scenarios">
+      <div class="scenario">
+        <div>
+          <h3>UX-аудит ключевого сценария</h3>
+          <p class="sc-desc">Проводим респондентов по одному контрольному сценарию сайта или приложения с айтрекингом; выявляем зоны слепоты, моменты замешательства и потери внимания.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>197&nbsp;800 – 249&nbsp;960&nbsp;₽</div>
+      </div>
+      <div class="scenario">
+        <div>
+          <h3>Сравнение двух версий (A/B)</h3>
+          <p class="sc-desc">Сравниваем две версии экранов или потока по вниманию (айтрекинг) и вегетативной реакции (КГР); фиксируем, какая версия меньше «теряет» пользователя.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>348&nbsp;680 – 464&nbsp;080&nbsp;₽</div>
+      </div>
+      <div class="scenario">
+        <div>
+          <h3>Когнитивная нагрузка в рабочем сценарии</h3>
+          <p class="sc-desc">Измеряем динамику когнитивной нагрузки и внимания (ЭЭГ + поведение) в типичном рабочем или продуктовом сценарии — без клинических выводов.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>357&nbsp;730 – 464&nbsp;780&nbsp;₽</div>
+      </div>
     </div>
   </article>
 
   <article class="block" id="napr-neuromarketing">
     <div class="num">Пакет 02 · направление</div>
     <h2>Нейромаркетинг и сенсорный аудит</h2>
-    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
-    <div class="meta">
-      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
-      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
-      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
+    <p class="pkg-lead">Оцениваем реакцию на ролик, упаковку, полку или этапы воронки до медиазакупки и редизайна: внимание, эмоциональный отклик и запоминаемые фрагменты в лабораторной сессии.</p>
+    <div class="scenarios">
+      <div class="scenario">
+        <div>
+          <h3>Тест рекламного ролика / креатива</h3>
+          <p class="sc-desc">Показываем ролик или набор креативов с синхронной записью ЭЭГ, айтрекинга и КГР; на выходе — зоны внимания и рекомендации до медиазакупки.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>460&nbsp;750 – 633&nbsp;350&nbsp;₽</div>
+      </div>
+      <div class="scenario">
+        <div>
+          <h3>Аудит упаковки / полки</h3>
+          <p class="sc-desc">Тестируем упаковку или виртуальную/физическую полку: куда смотрят, что замечают первым, какая эмоциональная реакция. Теплокарты и приоритеты доработки.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>300&nbsp;620 – 401&nbsp;220&nbsp;₽</div>
+      </div>
+      <div class="scenario">
+        <div>
+          <h3>Клиентский путь (CJM)</h3>
+          <p class="sc-desc">Проводим респондентов по этапам оформления услуги или воронки на сайте с ЭЭГ, айтрекингом и КГР; карта шагов, где падает внимание и срывается действие.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>522&nbsp;650 – 680&nbsp;450&nbsp;₽</div>
+      </div>
     </div>
   </article>
 
   <article class="block" id="napr-rehab">
     <div class="num">Пакет 03 · направление</div>
     <h2>Валидация методик восстановления и когнитивного тренинга</h2>
-    <p class="desc-ph">Описание пакета — заготовка. Краткий состав работ и типичные сценарии заказчика будут добавлены позже.</p>
-    <div class="meta">
-      <div><b>Формат</b><span class="ph-val">уточняется</span></div>
-      <div><b>Результат</b><span class="ph-val">уточняется</span></div>
-      <div><b>Ценовой диапазон</b><span class="ph-val">уточняется</span></div>
+    <p class="pkg-lead">Снимаем измеримые когнитивные и моторные метрики для обучения и R&amp;D: сдвиг «до/после», сравнение протоколов, кинематика. Без обещаний лечения, диагноза и клинической эффективности.</p>
+    <div class="scenarios">
+      <div class="scenario">
+        <div>
+          <h3>Пилот «до/после» когнитивного тренинга</h3>
+          <p class="sc-desc">Батарея когнитивных проб и поведенческих метрик до и после курса корпоративного или прикладного тренинга; отчёт о сдвиге метрик и акт валидации методики.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>414&nbsp;900 – 558&nbsp;900&nbsp;₽</div>
+      </div>
+      <div class="scenario">
+        <div>
+          <h3>Сравнение двух протоколов</h3>
+          <p class="sc-desc">Две группы, одни и те же объективные метрики до/после; сравнение сдвига в прикладной рамке — не клиническое доказательство превосходства.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>584&nbsp;320 – 811&nbsp;420&nbsp;₽</div>
+      </div>
+      <div class="scenario">
+        <div>
+          <h3>Восстановительная методика (кинематика + пробы)</h3>
+          <p class="sc-desc">Оценка методики по кинематике движений и когнитивным/поведенческим пробам. Объективные метрики для R&amp;D или методического паспорта.</p>
+        </div>
+        <div class="price"><small>стоимость работ</small>401&nbsp;300 – 533&nbsp;300&nbsp;₽</div>
+      </div>
     </div>
   </article>
+
+  <p class="note">
+    Стоимость указана за работы по тарифу СамГМУ. Сверх диапазона — вознаграждение респондентам, расходные материалы, выезд, агентский рекрут и иные позиции вне тарифа. Точная смета формируется после технического задания.
+  </p>
 
   <div class="cta-bar">
     <div>
